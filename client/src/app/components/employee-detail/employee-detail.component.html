@@ -1,0 +1,38 @@
+<div class="container">
+  <div *ngIf="loading" class="loading">Chargement...</div>
+
+  <div *ngIf="!loading && employee" class="detail-card">
+    <h1>Détails de l'employé</h1>
+    
+    <div class="detail-item">
+      <span class="label">ID:</span>
+      <span class="value">{{ employee.id }}</span>
+    </div>
+
+    <div class="detail-item">
+      <span class="label">Prénom:</span>
+      <span class="value">{{ employee.firstName }}</span>
+    </div>
+
+    <div class="detail-item">
+      <span class="label">Nom:</span>
+      <span class="value">{{ employee.lastName }}</span>
+    </div>
+
+    <div class="detail-item">
+      <span class="label">Email:</span>
+      <span class="value">{{ employee.email }}</span>
+    </div>
+
+    <div class="detail-item">
+      <span class="label">Salaire:</span>
+      <span class="value">{{ employee.salary | number:'1.2-2' }} DH</span>
+    </div>
+
+    <div class="actions">
+      <button (click)="modifier()" class="btn-primary">Modifier</button>
+      <button (click)="retour()" class="btn-secondary">Retour</button>
+    </div>
+  </div>
+</div>
+

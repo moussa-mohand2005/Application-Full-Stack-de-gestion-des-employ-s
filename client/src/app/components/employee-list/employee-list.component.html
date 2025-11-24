@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="header">
+    <h1>Liste des employés</h1>
+    <div class="actions">
+      <button (click)="ajouter()" class="btn-primary">Ajouter</button>
+      <button (click)="logout()" class="btn-secondary">Déconnexion</button>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="loading">Chargement...</div>
+
+  <table *ngIf="!loading && employes.length > 0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Salaire</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employes">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.firstName }}</td>
+        <td>{{ emp.lastName }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.salary | number:'1.2-2' }} DH</td>
+        <td>
+          <button (click)="details(emp.id!)" class="btn-info">Détails</button>
+          <button (click)="modifier(emp.id!)" class="btn-edit">Modifier</button>
+          <button (click)="supprimer(emp.id!)" class="btn-delete">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!loading && employes.length === 0" class="empty">
+    Aucun employé trouvé
+  </div>
+</div>
+

@@ -231,19 +231,3 @@ Authorization: Bearer JWT_TOKEN_ICI
 - `util/JwtUtil.java` : utilitaires JWT
 - `dto/LoginRequest.java`, `dto/LoginResponse.java` : objets de transfert
 
----
-
-## Améliorations possibles
-
-- Gestion avancée des rôles (admin, user, etc.)
-- Pagination et filtrage côté backend et frontend
-- Gestion des messages d’erreur plus détaillée côté UI
-- Intégration d’Angular Material pour une interface plus riche
-
----
-
-## Licence
-
-Projet académique réalisé dans le cadre d’un atelier au sein de la
-Faculté des Sciences et Techniques de Tanger, cycle d’ingénieur
-Logiciels et Systèmes Intelligents.
